@@ -11,11 +11,9 @@ document.getElementById("searchBtn").addEventListener("click", function () {
 });
 
 
-// Get weather data
 async function getWeather(city) {
 
     try {
-        // First API: Get city location
         let locationUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1`;
 
         let locationResponse = await fetch(locationUrl);
@@ -31,13 +29,11 @@ async function getWeather(city) {
         let cityName = locationData.results[0].name;
         let country = locationData.results[0].country;
 
-        // Second API: Get weather
         let weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&hourly=visibility&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max&forecast_days=5&timezone=auto`;
 
         let weatherResponse = await fetch(weatherUrl);
         let weatherData = await weatherResponse.json();
 
-        // Current weather
         let current = weatherData.current;
 
         document.getElementById("cityName").innerText = cityName + ", " + country;
@@ -45,8 +41,7 @@ async function getWeather(city) {
         document.getElementById("feelsLike").innerText = "Feels Like " + current.apparent_temperature + "°C";
         document.getElementById("humidity").innerText = current.relative_humidity_2m + "%";
         document.getElementById("wind").innerText = current.wind_speed_10m + " km/h";
-
-        // Weather condition
+        
         let condition = "Clear";
 
         if (current.weather_code === 0) {
@@ -67,11 +62,9 @@ async function getWeather(city) {
 
         document.getElementById("condition").innerText = condition;
 
-        // UV Index
         document.getElementById("uv").innerText =
             weatherData.daily.uv_index_max[0];
 
-        // Visibility
         let hourly = weatherData.hourly;
         let index = hourly.time.indexOf(current.time);
 
@@ -82,7 +75,6 @@ async function getWeather(city) {
         document.getElementById("visibility").innerText =
             (hourly.visibility[index] / 1000).toFixed(1) + " km";
 
-        // 5 Day Forecast
         let forecast = weatherData.daily;
         let output = "";
 
@@ -110,7 +102,6 @@ async function getWeather(city) {
 }
 
 
-// Weather icons
 function getWeatherIcon(code) {
 
     if (code === 0) {
@@ -133,5 +124,4 @@ function getWeatherIcon(code) {
 }
 
 
-// Default city
 getWeather("Meerut");
