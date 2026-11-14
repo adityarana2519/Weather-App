@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>☀ Weather App</h2>
+
+            <nav>
+                <a href="#" class="active">🏠 Dashboard</a>
+                <a href="#search">📍 Search City</a>
+                <a href="#forecast">📅 Forecast</a>
+                <a href="#favorites">❤️ Favorites</a>
+                <a href="#settings">⚙ Settings</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Weather Dashboard</p>
+                <small>Made with JavaScript</small>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <header>
+                <div>
+                    <h1>Weather Dashboard</h1>
+                    <p>Check weather conditions in your city</p>
+                </div>
+
+                <div class="profile">AR</div>
+            </header>
+
+            <!-- Search Bar -->
+            <section class="search-section" id="search">
+                <input type="text" id="cityInput" placeholder="Enter city name...">
+                <button id="searchBtn">Search</button>
+            </section>
+
+            <!-- Current Weather -->
+            <section class="weather-card">
+                <div>
+                    <p>Current Weather</p>
+                    <h2 id="cityName">Meerut, India</h2>
+                    <h1 id="temperature">28°C</h1>
+                    <h3 id="condition">Partly Cloudy</h3>
+                    <p id="feelsLike">Feels Like 30°C</p>
+                </div>
+
+                <div class="weather-icon">
+                    🌤️
+                </div>
+            </section>
+
+            <!-- Weather Details -->
+            <section class="details-section">
+
+                <div class="detail-card">
+                    <p>💧 Humidity</p>
+                    <h2 id="humidity">65%</h2>
+                </div>
+
+                <div class="detail-card">
+                    <p>💨 Wind Speed</p>
+                    <h2 id="wind">12 km/h</h2>
+                </div>
+
+                <div class="detail-card">
+                    <p>☀️ UV Index</p>
+                    <h2 id="uv">5</h2>
+                </div>
+
+                <div class="detail-card">
+                    <p>👁️ Visibility</p>
+                    <h2 id="visibility">8 km</h2>
+                </div>
+
+            </section>
+
+            <!-- 5 Day Forecast -->
+            <section class="forecast-section" id="forecast">
+                <h2>5-Day Forecast</h2>
+
+                <div class="forecast-container">
+
+                    <div class="forecast-card">
+                        <p>Monday</p>
+                        <h2>☀️</h2>
+                        <h3>30°C</h3>
+                    </div>
+
+                    <div class="forecast-card">
+                        <p>Tuesday</p>
+                        <h2>🌤️</h2>
+                        <h3>28°C</h3>
+                    </div>
+
+                    <div class="forecast-card">
+                        <p>Wednesday</p>
+                        <h2>🌧️</h2>
+                        <h3>25°C</h3>
+                    </div>
+
+                    <div class="forecast-card">
+                        <p>Thursday</p>
+                        <h2>⛅</h2>
+                        <h3>27°C</h3>
+                    </div>
+
+                    <div class="forecast-card">
+                        <p>Friday</p>
+                        <h2>☀️</h2>
+                        <h3>31°C</h3>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Favorite Cities -->
+            <section class="favorites-section" id="favorites">
+                <h2>Favorite Cities</h2>
+
+                <div class="favorite-container">
+                    <div class="favorite-card">
+                        <h3>📍 Delhi</h3>
+                        <p>32°C - Sunny</p>
+                    </div>
+
+                    <div class="favorite-card">
+                        <h3>📍 Mumbai</h3>
+                        <p>29°C - Cloudy</p>
+                    </div>
+
+                    <div class="favorite-card">
+                        <h3>📍 Noida</h3>
+                        <p>30°C - Clear</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings -->
+            <section class="settings-section" id="settings">
+                <h2>Settings</h2>
+                <p>Temperature Unit: Celsius (°C)</p>
+            </section>
+
+        </main>
+
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
