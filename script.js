@@ -1,4 +1,3 @@
-// Search button
 document.getElementById("searchBtn").addEventListener("click", function () {
     let city = document.getElementById("cityInput").value;
 
